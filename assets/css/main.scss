@@ -1,0 +1,121 @@
+@import 'breakpoints';
+
+// @include media('<lg', '<md') {
+//    * {
+//       outline: 1px solid red !important;
+//    }
+// }
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+:root {
+  --color-accent: rgba(0, 0, 0, 0.9);
+  --color-main: linear-gradient(to right top, #b13c89, #bb4382, #c34c7c, #c95677, #ce6073);
+  --color-main2: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  --color-btn: linear-gradient(to left, #b13c89, #bb4382, #c34c7c, #c95677, #d86c7e);
+  --color-btn2: linear-gradient(to left, #d1399c, #b43677, #d83d7b, #d3436c, #e04b63);
+  --box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.205);
+  --anim-speed: 300ms ease;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  background: rgb(192, 192, 192);
+}
+
+a {
+  font-family: 'Montserrat', sans-serif;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  gap: 0.2rem;
+  a {
+    font-size: 3rem;
+    font-size: clamp(2.6rem, 3vw, 3rem);
+    padding: 0.2rem;
+    color: var(--color-accent);
+    transition: transform var(--anim-speed), color var(--anim-speed);
+  }
+
+  .icons {
+    z-index: 5;
+    flex-direction: row;
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+
+    &__facebook {
+      color: #4267b2;
+    }
+    &__instagram {
+      color: #e1306c;
+    }
+    &__twitter {
+      color: #00acee;
+    }
+
+    &__icon:not(:hover) {
+      color: black;
+    }
+
+    // Scale on Hover for all social icons
+    &__icon:hover,
+    &__icon:focus {
+      transform: scale(1.2);
+    }
+    // Scale on Hover for all social icons
+  }
+
+  .engoa {
+    position: relative;
+    margin-bottom: 3rem;
+
+    a {
+      color: black;
+      font-size: 0.85rem;
+      font-size: clamp(0.75rem, 1vw, 0.85rem);
+      font-weight: bold;
+      opacity: 0.9;
+      text-decoration: none;
+      transition: all 150ms linear;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      background: var(--color-accent);
+      width: 0%;
+      top: 50%;
+      transform: translateY(50%);
+      right: 0;
+      left: 0;
+      height: 2px;
+      transition: width 150ms linear;
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+  }
+}

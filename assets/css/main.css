@@ -1,0 +1,138 @@
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+:root {
+  --color-accent: rgba(0, 0, 0, 0.9);
+  --color-main: linear-gradient(to right top, #b13c89, #bb4382, #c34c7c, #c95677, #ce6073);
+  --color-main2: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  --color-btn: linear-gradient(to left, #b13c89, #bb4382, #c34c7c, #c95677, #d86c7e);
+  --color-btn2: linear-gradient(to left, #d1399c, #b43677, #d83d7b, #d3436c, #e04b63);
+  --box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.205);
+  --anim-speed: 300ms ease;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  background: silver;
+}
+
+a {
+  font-family: 'Montserrat', sans-serif;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 30vh;
+  gap: 0.2rem;
+}
+
+footer a {
+  font-size: 3rem;
+  font-size: clamp(2.6rem, 3vw, 3rem);
+  padding: 0.2rem;
+  color: var(--color-accent);
+  -webkit-transition: color var(--anim-speed), -webkit-transform var(--anim-speed);
+  transition: color var(--anim-speed), -webkit-transform var(--anim-speed);
+  transition: transform var(--anim-speed), color var(--anim-speed);
+  transition: transform var(--anim-speed), color var(--anim-speed), -webkit-transform var(--anim-speed);
+}
+
+footer .icons {
+  z-index: 5;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+footer .icons__facebook {
+  color: #4267b2;
+}
+
+footer .icons__instagram {
+  color: #e1306c;
+}
+
+footer .icons__twitter {
+  color: #00acee;
+}
+
+footer .icons__icon:not(:hover) {
+  color: black;
+}
+
+footer .icons__icon:hover, footer .icons__icon:focus {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+footer .engoa {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+footer .engoa a {
+  color: black;
+  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 1vw, 0.85rem);
+  font-weight: bold;
+  opacity: 0.9;
+  text-decoration: none;
+  -webkit-transition: all 150ms linear;
+  transition: all 150ms linear;
+}
+
+footer .engoa a:hover {
+  opacity: 1;
+}
+
+footer .engoa::before {
+  content: '';
+  position: absolute;
+  background: var(--color-accent);
+  width: 0%;
+  top: 50%;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  right: 0;
+  left: 0;
+  height: 2px;
+  -webkit-transition: width 150ms linear;
+  transition: width 150ms linear;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+footer .engoa:hover::before {
+  width: 100%;
+}
+/*# sourceMappingURL=main.css.map */
